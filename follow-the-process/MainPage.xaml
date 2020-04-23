@@ -1,0 +1,63 @@
+﻿<Page
+    x:Class="follow_the_process.MainPage"
+    x:Name="MainPageEle"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:follow_the_process"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="#FF2C3539">
+
+    <Grid x:Name="LayoutRoot" Margin="0,30,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="157*"/>
+            <ColumnDefinition Width="43*"/>
+        </Grid.ColumnDefinitions>
+
+        <Hub x:Name="Hub" x:Uid="Hub" Grid.ColumnSpan="2">
+            <HubSection x:Uid="HubSection2" Header="Existing pos" DataContext="{Binding ExistingPositions}">
+                <DataTemplate>
+                    <ListView ItemsSource="{Binding ElementName=MainPageEle, Path = ViewModel[existingPositions]}"
+                        IsItemClickEnabled="False"
+                        ContinuumNavigationTransitionInfo.ExitElementContainer="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <Image Margin="0,0,0,2"
+                                           DoubleTapped="ExistingPosChart_DoubleTapped"
+                                           Tag="{Binding Tkr}">
+                                        <Image.Source>
+                                            <BitmapImage UriSource="{Binding Url}"/>
+                                        </Image.Source>
+                                    </Image>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </DataTemplate>
+            </HubSection>
+
+            <!--
+            <HubSection x:Uid="HubSection3" x:Name="AnnsHubSection" Header="Anns" Width="Auto" DataContext="{Binding NonMiningPriceSensAnns}">
+                <DataTemplate x:Name="AnnsDataTemplate">
+                    <ListView x:Name="AnnsList" IsItemClickEnabled="False">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <CheckBox VerticalAlignment="Center" Checked="CheckBox_Checked" Tag="{Binding CompanyName}" Background="{x:Null}" BorderBrush="White">
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Title}" FontSize="24" Foreground="White" />
+                                        <TextBlock Text="{Binding Tkr}" FontSize="24" Foreground="White" />
+                                        <TextBlock Text="{Binding CompanyName}" FontSize="18" Foreground="White" />
+                                    </StackPanel>
+                                </CheckBox>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </DataTemplate>
+            </HubSection>
+            -->
+
+        </Hub>
+    </Grid>
+</Page>

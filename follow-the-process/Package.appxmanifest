@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
+  <Identity Name="755d68ae-bfb0-4e5d-a74a-5948afd0ab47" Publisher="CN=New" Version="1.0.0.0" />
+  <mp:PhoneIdentity PhoneProductId="755d68ae-bfb0-4e5d-a74a-5948afd0ab47" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>follow-the-process</DisplayName>
+    <PublisherDisplayName>New</PublisherDisplayName>
+    <Logo>Assets\splash.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.1</OSMinVersion>
+    <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="follow_the_process.App">
+      <m3:VisualElements DisplayName="Follow The Process" Square150x150Logo="Assets\splash.png" Square44x44Logo="Assets\splash.png" Description="App to support daily trading process" ForegroundText="light" BackgroundColor="transparent" ToastCapable="false">
+        <m3:DefaultTile Wide310x150Logo="Assets\splash.png" Square71x71Logo="Assets\splash.png">
+        </m3:DefaultTile>
+        <m3:SplashScreen Image="Assets\splash.png" BackgroundColor="#2C3539" />
+        <m3:InitialRotationPreference>
+          <m3:Rotation Preference="portrait" />
+        </m3:InitialRotationPreference>
+      </m3:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClientServer" />
+  </Capabilities>
+</Package>
